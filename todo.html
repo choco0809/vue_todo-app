@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+  <title>TodoApp</title>
+  <script src="https://unpkg.com/vue@3"></script>
+</head>
+<!--<div id="app">{{ message }}</div>-->
+<div class="main" id="app">
+  <div class="title">
+    <h1>ToDo List For Local Storage</h1>
+  </div>
+  <div class="todo">
+    <label>
+      <input v-model="inputTodo" placeholder="new todo">
+    </label>
+    <button @click="addNewTodo">add</button>
+  </div>
+  <div class="todoList">
+    <div class="incomplete">
+      <h2>InComplete</h2>
+      <table>
+        <tr v-for="incompleteToDo,index in incompleteToDoList" :key="index">
+          <td>
+            <div class="todoContents">
+              <input type="checkbox" :disabled="!incompleteToDo.editChecked"
+                     v-model="incompleteToDo.checked" @change="updateIncompleteToDoList(index)">
+              <span v-if="incompleteToDo.editChecked" @dblclick="incompleteToDo.editChecked=false">
+                {{ incompleteToDo.contents }}
+              </span>
+              <span v-else>
+                <input v-model="incompleteToDo.contents">
+                <button @click="editTodoContent(index,incompleteToDo.contents)">save</button>
+              </span>
+            </div>
+          </td>
+          <td>
+            <button :disabled="!incompleteToDo.editChecked" @click="deleteInCompleteToDoList(index)">delete</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="complete">
+      <h2>Complete</h2>
+      <table>
+        <tr v-for="completeToDo,index in completeToDoList" :key="index">
+          <td>
+            <div class="todoContents">
+              <span>
+                <input type="checkbox" v-model="completeToDo.checked" @change="updateCompleteToDoList(index)">
+                <span>{{ completeToDo.contents }}</span>
+              </span>
+            </div>
+          </td>
+          <td>
+            <button @click="deleteCompleteToDoList">delete</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script src="todo.js"></script>
+</html>
