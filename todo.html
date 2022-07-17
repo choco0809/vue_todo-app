@@ -31,7 +31,7 @@
                 {{ incompleteToDo.contents }}
               </span>
               <span v-else>
-                <input v-model="incompleteToDo.contents">
+                <input class="inputContents" v-model="incompleteToDo.contents">
                 <button @click="editTodoContent(index,incompleteToDo.contents)">save</button>
               </span>
             </div>

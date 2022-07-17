@@ -54,6 +54,10 @@ h1 {
     height: 350px;
 }
 
+.inputContents {
+    width: 300px;
+}
+
 .complete {
     height: 350px;
 }
