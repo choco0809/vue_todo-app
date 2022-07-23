@@ -1,1 +1,1 @@
-# vue_todo-app
+# vue-todo-app

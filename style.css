@@ -1,0 +1,84 @@
+body {
+    font-family: "Arial", "メイリオ";
+    background-color: #3A565C;
+    color: white;
+}
+
+.main {
+    background-color: #7EA8BF;
+    height: 960px;
+    width: 950px;
+    margin: auto;
+}
+
+.title {
+    height: 80px;
+    width: 600px;
+    display: flex;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 40px;
+    margin: auto;
+}
+
+.todo {
+    margin: auto;
+    width: 600px;
+    height: 80px;
+    text-align: center;
+}
+
+.todo button {
+    margin-left: 10px;
+}
+
+.todo input {
+    height: 25px;
+    width: 400px;
+}
+
+.todoList {
+    margin: auto;
+    width: 600px;
+    height: 700px;
+}
+
+.todoList button {
+    width: 60px;
+    height: 30px;
+}
+
+.incomplete {
+    height: 350px;
+}
+
+.inputContents {
+    width: 300px;
+}
+
+.complete {
+    height: 350px;
+}
+
+.todoContents {
+    width: 400px;
+}
+
+span {
+    margin-left: 5px;
+    font-size: 20px;
+}
+
+span button {
+    margin-left: 5px;
+}
+
+table {
+    width: 500px;
+}
+
+button {
+    font-size: 15px;
+}
